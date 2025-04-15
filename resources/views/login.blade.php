@@ -13,11 +13,11 @@
                 <!-- form -->
                 <div class="row justify-content-center">
                     <div class="col-md-10 col-12">
-                        <form action="/loginSubmit" method="post">
+                        <form action="/loginSubmit" method="post" novalidate>
                             @csrf
                             <div class="mb-3">
                                 <label for="text_username" class="form-label">Username</label>
-                                <input type="text" class="form-control bg-dark text-info" name="text_username" value="{{ old('text_username') }}">
+                                <input type="email" class="form-control bg-dark text-info" name="text_username" value="{{ old('text_username') }}" required>
                                 {{-- show error --}}
                                 @error('text_username')
                                 <div class="text-danger">{{ $message }}</div>
@@ -25,7 +25,7 @@
                             </div>
                             <div class=" mb-3">
                                 <label for="text_password" class="form-label">Password</label>
-                                <input type="password" class="form-control bg-dark text-info" name="text_password" value="{{ old('text_password') }}">
+                                <input type="password" class="form-control bg-dark text-info" name="text_password" value="{{ old('text_password') }}" required>
                                 {{-- show error --}}
                                 @error('text_password')
                                 <div class="text-danger">{{ $message }}</div>
