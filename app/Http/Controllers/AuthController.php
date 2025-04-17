@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -33,6 +34,12 @@ class AuthController extends Controller
         // get user input
         $username = $request->input('username');
         $password = $request->input('password');
+
+        // get all the users from the database
+        $userModel = new User();
+        $users = $userModel->all()->toArray();
+        echo '<pre>';
+        print_r($users);
 
         // test database connection 
         try {
