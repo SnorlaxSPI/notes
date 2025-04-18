@@ -5,7 +5,6 @@ use App\Http\Controllers\MainController;
 use App\Http\Middleware\CheckIsLogged;
 use Illuminate\Support\Facades\Route;
 
-// auth routes
 Route::get('/login', [AuthController::class, 'login']);
 Route::post('/loginSubmit', [AuthController::class, 'loginSubmit']);
 
